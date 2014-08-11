@@ -1,10 +1,11 @@
 "use strict";
 
-var mil = Math.pow(10,6);
+var mil = Math.pow(10,4);
 
 var i = 0,
     results = [],
-    totalCalls = 0;
+    totalCalls = 0,
+	iterations = 100;
 
 function makeSausage( subject ){
     var start = +new Date();
@@ -22,7 +23,7 @@ function done() {
         totesTime += results[i]; 
     }
     
-    console.log("the total time for all ", totalCalls, " calls was:", totesTime, " ms"); 
+    console.log("the total time for all calls was:", totesTime, " ms"); 
 }
 
 // Gary is an IIFE ( immediately invoked function expression )
@@ -32,9 +33,8 @@ function done() {
     
     // generate a random number 1 million times
     var diff = makeSausage(function(){
-        for( var i = 0; i < mil; i++ ){
+        for( var c = 0; c < mil; c++ ){
             Math.random();
-            totalCalls++;
         }
     });
     
@@ -43,7 +43,7 @@ function done() {
     i++
     
     // make sausage 1000 times
-    if ( i < 100 ){
+    if ( i < iterations ){
         setTimeout( Gary, 0 ); 
     } else { 
         done();
