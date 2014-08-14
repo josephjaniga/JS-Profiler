@@ -1,11 +1,11 @@
 "use strict";
 
-var mil = Math.pow(10,4);
+var mil = Math.pow(10,6);
 
 var i = 0,
     results = [],
     totalCalls = 0,
-	iterations = 100;
+	iterations = 50;
 
 function makeSausage( subject ){
     var start = +new Date();
@@ -23,7 +23,8 @@ function done() {
         totesTime += results[i]; 
     }
     
-    console.log("the total time for all calls was:", totesTime, " ms"); 
+    console.log("Total time:", totesTime, " ms");
+    console.log("Average time:", totesTime/(iterations), " ms");
 }
 
 // Gary is an IIFE ( immediately invoked function expression )
