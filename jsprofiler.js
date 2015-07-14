@@ -1,6 +1,6 @@
 "use strict";
 
-var mil = Math.pow(10,6);
+var mil = 1e6; // scientific notation is more better
 
 var i = 0,
     results = [],
